@@ -24,8 +24,8 @@ The function allows following HTML:
 Calling some_html on an unsafe string. returns an html_safe string
 
 == Example
-"some <b>unsafe</b> string<script>alert('not working');</script>".some_html
-# => "some <b>unsafe</b> string&lt;script&gt;alert('not working');&lt;/script&gt;"
+ "some <b>unsafe</b> string<script>alert('not working');</script>".some_html
+ # => "some <b>unsafe</b> string&lt;script&gt;alert('not working');&lt;/script&gt;"
 
 
 
