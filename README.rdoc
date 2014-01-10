@@ -1,0 +1,33 @@
+= SomeHtml
+
+allows xss safe html markups
+
+Some_html allows some safe html markups, while prevent xss and site markup (not closed html-Tags, will be escaped). Ideal for display content edited in  WYSIWYG editors like ckeditor
+
+The function allows following HTML:
+ #    <a href="URL"> link </a> (only href attribute)
+ #    <b>bold</b>
+ #    <blockquote>
+ #        blockquote
+ #    </blockquote>
+ #    <em>emphasis</em>
+ #    <i>italic</i>
+ #    <strong>strong</strong>
+ #    <u>underlined</u>
+ #    <hX>Heading X</hX>
+ #    <p>paragrafs</p>
+ #    <br />
+ #    HTML entities: &nbsp; &gt; &lt; &amp;
+
+
+== Usage
+Calling some_html on an unsafe string. returns an html_safe string
+
+== Example
+"some <b>unsafe</b> string<script>alert('not working');</script>".some_html
+# => "some <b>unsafe</b> string&lt;script&gt;alert('not working');&lt;/script&gt;"
+
+
+
+
+This project rocks and uses MIT-LICENSE.
