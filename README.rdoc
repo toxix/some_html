@@ -19,6 +19,11 @@ The function allows following HTML:
  #    <br />
  #    HTML entities: &nbsp; &gt; &lt; &amp;
 
+== Insallation
+Add this line to your Gemfile:
+ gem 'some_html', github: 'toxix/some_html'
+and update your bundle with
+ bundle install
 
 == Usage
 Calling some_html on an unsafe string. returns an html_safe string
