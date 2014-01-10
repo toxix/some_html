@@ -39,10 +39,10 @@ String.class_eval do
  
     # replacing newlines to <br> and <p> tags 
     # wrapping text into paragraph 
-    # only if no p or br tags are found
-    unless s.include?("&lt;p&gt;") || s.include?("&lt;br /&gt;")
-      s = s.gsub(/\n\n+/, "</p>\n\n<p>").
-              gsub(/([^\n]\n)(?=[^\n])/, '\1<br />')
+    # only if no p or br tags are found and there are line brakes
+    if s.match(/\n/) && !(s.include?("&lt;p&gt;") || s.include?("&lt;br /&gt;"))
+      s = '<p>' + s.gsub(/\n\n+/, "</p>\n\n<p>") + '</p>'
+      s.gsub!(/([^\n]\n)(?=[^\n])/, '\1<br />')
     end
 
     # unescape <br />

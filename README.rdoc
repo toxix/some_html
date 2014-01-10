@@ -19,6 +19,8 @@ The function allows following HTML:
  #    <br />
  #    HTML entities: &nbsp; &gt; &lt; &amp;
 
+If newlines but no <p> or <br /> tags are present single newlines are converted to <br /> and doble newlines will enclose text with <p>…</p>
+
 == Installation
 Add this line to your Gemfile:
  gem 'some_html', github: 'toxix/some_html'
