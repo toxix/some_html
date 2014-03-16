@@ -15,6 +15,9 @@ String.class_eval do
   #    <br />
   #    HTML entities: &nbsp; &gt; &lt; &amp;
   def some_html
+    # catching nil error for text phrasing
+    return nil if self.nil?
+
     # converting newlines 
     s = self.gsub(/\r\n?/, "\n") 
  
